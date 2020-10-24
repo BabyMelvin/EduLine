@@ -18,8 +18,13 @@ import xadmin
 from users import views
 from django.views.generic import TemplateView
 
+from users.views import LoginView
+
+# 函数形式实现登陆
+# path('login/', views.user_login, name='login'),  # 修改login路由
+
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
-    path('login/', views.user_login, name='login'),  # 修改login路由
+    path('login/', LoginView.as_view(), name='login'),
 ]
