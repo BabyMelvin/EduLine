@@ -29,7 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -78,7 +77,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'EduLine.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -91,14 +89,13 @@ WSGI_APPLICATION = 'EduLine.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'eduline',        #数据库名字
-        'USER': 'root',           #账号
-        'PASSWORD': 'ztt123456',  #密码
-        'HOST': '127.0.0.1',      #IP
-        'PORT': '3306',           #端口
+        'NAME': 'eduline',  # 数据库名字
+        'USER': 'root',  # 账号
+        'PASSWORD': 'ztt123456',  # 密码
+        'HOST': '127.0.0.1',  # IP
+        'PORT': '3306',  # 端口
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -119,7 +116,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -134,8 +130,10 @@ USE_L10N = True
 
 USE_TZ = False
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
